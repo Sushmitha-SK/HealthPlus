@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Admin Home Page</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+            </div>
+            <div class="loginDisplay">
+                <asp:Image ID="Image1" runat="server" 
+                    ImageUrl="~/Images/b2.jpg" Width="997px" />
+            </div>
+            <table width="100%" runat="server">
+            <tr>
+            <td>
+            <div class="clear hideSkiplink" 
+                style="background-image: url('/HealthPlus/Images/menu1.jpg')">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    Font-Bold="True" Font-Names="Candara" Font-Size="12pt">
+                    <Items>
+                        <asp:MenuItem Text="Home" ToolTip="Home" NavigateUrl="~/Admin/AdminHomePage.aspx"/>
+                        <asp:MenuItem Text="Add Resource" ToolTip="Add Resource" 
+                            Value="Add Resource" Selectable="False">
+                            <asp:MenuItem Text="Add Insurance Company" ToolTip="Add Insurance Company" 
+                                Value="Add Insurance Company" 
+                                NavigateUrl="~/Admin/AddInsuranceCompany.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Add Policy" ToolTip="Add Policy" 
+                                Value="Add Policy" NavigateUrl="~/Admin/AddPolicy.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Add Hospital Info" ToolTip="Add Hospital Info" 
+                                Value="Add Hospital Info" NavigateUrl="~/Admin/AddHospitalInfo.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/RegisterFinanceManager.aspx" 
+                                Text="Register Finance Manager" ToolTip="Register Finance Manager" 
+                                Value="Register Finance Manager"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Employee Support" ToolTip="Employee Support" 
+                            Value="Employee Support" Selectable="False">
+                            <asp:MenuItem Text="Working Employees" ToolTip="Working Employees" 
+                                Value="Working Employees" NavigateUrl="~/Admin/ViewCompanyEmployees.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Add Employee" ToolTip="Add Employee" 
+                                Value="Add Employee" NavigateUrl="~/Admin/AddEmployee.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Add Policy To Employee" ToolTip="Add Policy To Employee" 
+                                Value="Add Policy To Employee" NavigateUrl="~/Admin/AddPolicyToEmployee.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/DependentDetails.aspx" 
+                                Text="Add Dependent Details" ToolTip="Add Dependent Details" 
+                                Value="Add Dependent Details"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="View Details" ToolTip="View Details" Value="View Details" 
+                            Selectable="False" >
+                            <asp:MenuItem Text="Hospital Info" ToolTip="Hospital Info" 
+                                Value="Hospital Info" NavigateUrl="~/Admin/ViewHospitalInfo.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/ViewInsuranceCompanyDetails.aspx" 
+                                Text="Insurance Companies" ToolTip="Insurance Companies" 
+                                Value="Insurance Companies"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/ViewPolicies.aspx" Text="Policies" 
+                                ToolTip="Policies" Value="Policies"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/ViewFeedback.aspx" Text="Feedback" 
+                                ToolTip="Feedback" Value="Feedback"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/ViewDependentDetails.aspx" 
+                                Text="Dependent" ToolTip="Dependent" Value="Dependent">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/MangerDetails.aspx" Text="Manager" 
+                                ToolTip="Manager" Value="Manager"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Search" Value="Search" 
+                            ToolTip="Search" Selectable="False">
+                            <asp:MenuItem Text="Employee on Policy" ToolTip="Employee on Policy" 
+                                Value="Employee on Policy" NavigateUrl="~/Admin/SearchEmployeesonPolicies.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Policy on Employee" ToolTip="Policy on Employee" 
+                                Value="Policy on Employee" NavigateUrl="~/Admin/SearchPoliciesonEmployees.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Request Status" ToolTip="Request Status" 
+                            Value="Request Status" Selectable="False">
+                            <asp:MenuItem NavigateUrl="~/Admin/RequestonEmployees.aspx" 
+                                Text="Policy Request" ToolTip="Policy Request" Value="Policy Request">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Admin/ViewClaimRequest.aspx" Text="Claim Request" 
+                                ToolTip="Claim Request" Value="Claim Request"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Logout" ToolTip="Logout" Value="Logout" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+            </td>
+            </tr>
+            </table>
+            
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+               
+            </asp:ContentPlaceHolder>
+            <center>
+                <br />
+                <br />
+            </center>
+            
+        </div>
+        <div class="clear">
+        </div>
+         <div class="footer" 
+        
+            style="border: medium none #CCCCCC; background-image: url('/HealthPlus/Images/footer-blue.gif')">
+        <span style="color: Black; font-family:Calibri">&copy 2014 All Rights Reserved. </span>
+    </div>
+    </div>
+   
+    </form>
+</body>
+</html>

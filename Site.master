@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Health Plus</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+            </div>
+            <div class="loginDisplay">
+                <asp:Image ID="Image1" runat="server" 
+                    ImageUrl="~/Images/b2.jpg" 
+                    Width="996px" style="margin-left: 0px; border-radius:8px;"/>
+            </div>
+            <div class="clear hideSkiplink" 
+                style="background-image: url('/HealthPlus/Images/menu1.jpg')">
+               <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    Font-Bold="True" Font-Names="Candara" Font-Size="11pt" BorderStyle="None">
+             <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" ToolTip="Home"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About Us" ToolTip="About Us" 
+                            Value="About Us"/>
+                        <asp:MenuItem Text="Admin" ToolTip="Admin" Value="Admin" NavigateUrl="~/AdminLogin.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ManagerLogin.aspx" Text="Manager" 
+                            ToolTip="Manager" Value="Manager"></asp:MenuItem>
+                        <asp:MenuItem Text="Employee" Value="Employee" ToolTip="Employee" NavigateUrl="~/EmployeeLogin.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Feedback" ToolTip="Feedback" Value="Feedback" NavigateUrl="~/Feedback.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Contact Us" ToolTip="Contact Us" Value="Contact Us" NavigateUrl="~/ContactUs.aspx">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            
+            
+            
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="footer" 
+        style="background-image: url('http://localhost:1176/HealthPlus/Images/footer-blue.gif')">
+    
+    <span style="color: Black; font-family:Calibri; border-radius:8px">&copy 2014 All Rights Reserved. </span>
+                           
+    </div>
+    </div>
+    
+    </form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FinanceManager.master.cs" Inherits="Manager_FinanceManager" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Manager Home Page</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+            </div>
+            <div class="loginDisplay">
+                <asp:Image ID="Image1" runat="server" 
+                    ImageUrl="~/Images/b2.jpg" Width="998px" />
+            </div>
+            <table runat="server" width="100%">
+            <tr>
+            <td>
+            <div class="clear hideSkiplink" 
+                style="background-image: url('/HealthPlus/Images/menu1.jpg')">
+
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    Font-Bold="True" Font-Names="Candara" Font-Size="12pt">
+                    <Items>
+                        <asp:MenuItem Text="Home" ToolTip="Home" 
+                            NavigateUrl="~/Manager/ManagerHomePage.aspx"/>
+                        <asp:MenuItem Text="Manager Details" ToolTip="Manager Details" 
+                            Value="Manager Details" Selectable="False">
+                            <asp:MenuItem NavigateUrl="~/Manager/ManagerUpdateOwnDetails.aspx" 
+                                Text="Update Own Details" ToolTip="Update Own Details" 
+                                Value="Update Own Details"></asp:MenuItem>
+                            <asp:MenuItem Text="Change Password" ToolTip="Change Password" 
+                                Value="Change Password" NavigateUrl="~/Manager/ManagerChangePassword.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Process Claim Request" ToolTip="Process Claim Request" 
+                            Value="Process Claim Request" 
+                            NavigateUrl="~/Manager/ManageClaimRequest.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Logout" 
+                            Value="Logout" NavigateUrl="~/Default.aspx">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+            </td>
+            
+            </tr>
+            
+            </table>
+            
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+               
+            </asp:ContentPlaceHolder>
+            <center>
+                <br />
+                <br />
+            </center>
+            
+        </div>
+        <div class="clear">
+        </div>
+        <div class="footer" 
+            style="background-image: url('http://localhost:4799/HealthPlus/Images/footer-blue.gif')">
+        <span style="color: Black; font-family:Calibri">&copy 2014 All Rights Reserved. </span>
+    </div>
+    </div>
+    
+    </form>
+</body>
+</html>

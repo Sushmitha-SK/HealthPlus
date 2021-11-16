@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="EmployeeMasterPage.master.cs" Inherits="Employee_EmployeeMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Employee Home Page</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+            </div>
+            <div class="loginDisplay">
+                <asp:Image ID="Image1" runat="server" 
+                    ImageUrl="~/Images/b2.jpg" Width="999px" border-radius="8px"/>
+            </div>
+            <table runat="server" width="100%">
+            <tr>
+            <td>
+            <div class="clear hideSkiplink" 
+                style="background-image: url('/HealthPlus/Images/menu1.jpg')">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    Font-Bold="True" Font-Names="Candara" Font-Size="12pt">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Employee/EmployeeHomePage.aspx" Text="Home" 
+                            ToolTip="Home"/>
+                        <asp:MenuItem Text="Employee Details" ToolTip="Employee Details" 
+                            Value="Employee Details" Selectable="False">
+                            <asp:MenuItem Text="Update Details" ToolTip="Update Details" 
+                                Value="Update Details" NavigateUrl="~/Employee/UpdateOwnDetails.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Change Password" ToolTip="Change Password" 
+                                Value="Change Password" NavigateUrl="~/Employee/ChangePassword.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="View Details" ToolTip="View Details" Value="View Details" 
+                            Selectable="False">
+                            <asp:MenuItem Text="Policy Details" ToolTip="Policy Details" 
+                                Value="Policy Details" NavigateUrl="~/Employee/SearchPolicies.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Hospital Details" ToolTip="Hospital Details" 
+                                Value="Hospital Details" NavigateUrl="~/Employee/MedicalSupport.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Order for Insurance" Value="Order for Insurance" 
+                            ToolTip="Order for Insurance" NavigateUrl="~/Employee/OrderInsurance.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Employee/ApplyClaim.aspx" Text="Apply Claim Request" 
+                            ToolTip="Apply Claim Request" Value="Apply Claim Request"></asp:MenuItem>
+                        <asp:MenuItem Text="View Status" ToolTip="View Status" Value="View Status" 
+                            Selectable="False">
+                            <asp:MenuItem Text="Policy Request Status" 
+                                ToolTip="Policy Request Status" Value="Policy Request Status" 
+                                NavigateUrl="InsuranceRequestStatus.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Claim Request Status" ToolTip="Claim Request Status" 
+                                Value="Claim Request Status" 
+                                NavigateUrl="~/Employee/ClaimRequestStatus.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Logout" ToolTip="Logout" Value="Logout" 
+                            NavigateUrl="~/Default.aspx">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+            </td>
+            </tr>
+            </table>
+            
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+               
+            </asp:ContentPlaceHolder>
+            <center>
+                <br />
+                <br />
+            </center>
+            
+        </div>
+        <div class="clear">
+        </div>
+        <div class="footer" 
+        style="background-image: url('http://localhost:1176/HealthPlus/Images/footer-blue.gif')">
+        <span style="color: Black; font-family:Calibri">&copy 2014 All Rights Reserved. </span>
+    </div>
+    </div>
+    
+    </form>
+</body>
+</html>
